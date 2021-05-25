@@ -1,0 +1,16 @@
+	MOV R0, #30H
+	MOV A, R0
+L1:
+	MOV B, A
+L3:
+	DJNZ R2, L2
+	SJMP STP
+L2:
+	INC A
+	MOV A, R0
+	CJNE A, B, NEQ
+NEQ:
+	INC L3
+	SJMP L1
+STP:
+	MOV R1, B
